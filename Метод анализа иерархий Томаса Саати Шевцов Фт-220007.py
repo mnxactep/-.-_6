@@ -5,7 +5,7 @@ while True:
         num_criteria = int(input("Введите кол-во критериев: "))
         break
     except ValueError:
-        print('Неверное значение')
+        print('Неверное значение критерия')
 
 s_matrix = np.zeros((num_criteria, num_criteria))  # Создаём матрицу нулей
 
@@ -19,7 +19,7 @@ for i in range(a, num_criteria + 1):
                 s_matrix[i - 1][j - 1] = round(float(input('Введите сравнение К{0}-К{1}:'.format(i, j))), 3)
                 break
             except ValueError:
-                print('Неверное значение')
+                print('Неверное значение критерия')
 
         # Заполняем ячейки для обратного отношения (К1-К2 -> К2-К1)
         s_matrix[j - 1][i - 1] = round(1 / s_matrix[i - 1][j - 1], 2)
